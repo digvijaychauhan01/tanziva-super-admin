@@ -1,0 +1,76 @@
+/** Colors **/
+$primaryColor: #dc3545;
+$colorBright: #ffffff;
+$borderColor: #DADADA;
+$placeHolderColor: #e5e5e5;
+$secondaryColor: #dc3545;
+
+$color_border: #dadada;
+$color_placeholder: #f5f5f5;
+$color_primary: #dc3545;
+$color_secondary: #dc3545;
+$color_primaryLight: rgba(62, 207, 175, 0.1);
+$color_bright: #ffffff;
+$secondaryColor_light: rgba(36, 106, 255, 0.2);
+$textColor_dark: #242A2A;
+$textColor_light: #485253;
+$textColor_lighter: #7B838A;
+
+$color_error: #e74c3c;
+$color_success: #07bc0c;
+$color_warning: #f1c40f;
+$color_info: #3498db;
+
+/** Viewports **/
+$xxsvp: 425px;
+$xsvp: 520px;
+$svp: 768px;
+$mvp: 992px;
+$lvp: 1024px;
+$xlvp: 1280px;
+$xxlvp: 1440px;
+
+// Functions
+@function getSize ($value, $unit) {
+  @return ($value / $baseSize) + $unit;
+}
+
+@function getEM($value) {
+  @return calc($value / $baseSize) + em;
+}
+
+@function getBucketURL($path) {
+  @return "https://storage.googleapis.com" + $path;
+}
+// Mixis
+@mixin cssTransition ($rule) {
+  transition: $rule;
+  -webkit-transition: $rule;
+  -moz-transition: $rule;
+}
+
+@mixin bgAccent {
+  color: $bright;
+  background: $accent2;
+  background: -moz-linear-gradient(left,$accent2 0,$accent 100%);
+  background: -webkit-linear-gradient(left,$accent2 0,$accent 100%);
+  background: linear-gradient(to right,$accent2 0,$accent 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$accent2', endColorstr='$accent', GradientType=1);
+}
+
+// Fonts
+$fontWeight_bolder: 700;
+$fontWeight_bold: 500;
+$fontWeight_normal: 400;
+
+$baseSize: 14;
+$fontSize_smaller: 12;
+$fontSize_small: 14;
+$fontSize_normal: $baseSize;
+$fontSize_medium: 16;
+$fontFamily: Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+
+$fs_mainHeading: getEM(38);
+$fs_headingBig: getEM(38);
+$fs_headingSmall: getEM(28);
+$fs_headingSmaller: getEM(24);
